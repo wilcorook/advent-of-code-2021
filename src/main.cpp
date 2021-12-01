@@ -1,6 +1,9 @@
 #include <iostream>
+#include "day01/day01.h"
 
 int main(int argc, char const *argv[])
 {
-    std::cout << "Hello world!\n";
+    int result = dewIt();
+    std::cout << "result day01: ";
+    std::cout << result << std::endl;
 }
