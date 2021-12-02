@@ -8,7 +8,7 @@ std::vector<int> getNumbers()
     int size = 2000;
     std::vector<int> numbers;
 
-    std::string fileName = "numbers.txt";
+    std::string fileName = "day01.txt";
     std::ifstream inputFile(fileName.c_str());
     int currInt;
     if (inputFile.is_open())
