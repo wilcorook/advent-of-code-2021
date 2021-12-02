@@ -1,3 +1,3 @@
 #pragma once
 
-int dewIt();
+int day01puzzle1();
