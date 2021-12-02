@@ -1,39 +1,16 @@
 #include <iostream>
-#include <fstream>
 #include <string>
 #include <vector>
+#include "../util/util.h"
 
-std::vector<int> getNumbers()
-{
-    int size = 2000;
-    std::vector<int> numbers;
-
-    std::string fileName = "day01.txt";
-    std::ifstream inputFile(fileName.c_str());
-    int currInt;
-    if (inputFile.is_open())
-    {
-        for (int i = 0; i < size; i++)
-        {
-            inputFile >> currInt;
-            numbers.push_back(currInt);
-        }
-    }
-    else
-    {
-        std::cerr << "Can't open file\n";
-    }
-
-    return numbers;
-}
-
-int dewIt()
+int day01puzzle1()
 {
     int increased = 0;
     int previousMesurement = 0;
 
     std::vector<int> input;
-    input = getNumbers();
+    std::string fileName = "day01.txt";
+    input = getNumbersFromFile(fileName.c_str(), 2000);
 
     for (int i : input)
     {
@@ -43,6 +20,33 @@ int dewIt()
         }
 
         previousMesurement = i;
+    }
+
+    return increased;
+}
+
+int day01puzzle2()
+{
+    int increased = 0;
+    int previousSum = 0;
+
+    std::vector<int> input;
+    std::string fileName = "day01.txt";
+    input = getNumbersFromFile(fileName.c_str(), 2000);
+
+    for (int i = 0; i < input.size(); i++)
+    {
+        if ((input.size() - i) >= 3)
+        {
+            int sum = input[i] + input[i + 1] + input[i + 2];
+
+            if (sum > previousSum && previousSum != 0)
+            {
+                increased++;
+            }
+
+            previousSum = sum;
+        }
     }
 
     return increased;
