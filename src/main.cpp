@@ -18,4 +18,5 @@ int main(int argc, char const *argv[])
     LogResult(day02puzzle1(), "day02puzzle1");
     LogResult(day02puzzle2(), "day02puzzle2");
     LogResult(day03puzzle1(), "day03puzzle1");
+    LogResult(day03puzzle2(), "day03puzzle2");
 }
